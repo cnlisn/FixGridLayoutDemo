@@ -1,7 +1,5 @@
 package com.lisn.fixgridlayoutdemo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.content.Context;
 import android.os.Bundle;
@@ -11,11 +9,12 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.lisn.rxpermissionlibrary.permissions.RxPermissions;
 
 import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 /**
  * Author: LiShan
@@ -44,25 +43,10 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         //获取应用读写权限
         RxPermissions rxPermissions = new RxPermissions(this);
         Observable<Boolean> request = rxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        request.subscribe(new Observer<Boolean>() {
+        request.subscribe(new Consumer<Boolean>() {
             @Override
-            public void onSubscribe(Disposable d) {
-                Log.e(TAG, "onSubscribe: ");
-            }
-
-            @Override
-            public void onNext(Boolean aBoolean) {
-                Log.e("MainActivity", "onNext: ");
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                Log.e("MainActivity", "onError: ");
-            }
-
-            @Override
-            public void onComplete() {
-                Log.e("MainActivity", "onComplete: ");
+            public void accept(Boolean aBoolean) throws Exception {
+                Log.e(TAG, "accept: aBoolean =" + aBoolean);
             }
         });
 
