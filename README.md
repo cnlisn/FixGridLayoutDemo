@@ -4,5 +4,5 @@
 ## 效果图
 
 
-![](img/screenshot-1575353207723.jpg)
+![](https://github.com/cnlisn/FixGridLayoutDemo/blob/master/img/screenshot-1575353207723.jpg)
 
