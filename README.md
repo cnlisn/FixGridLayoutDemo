@@ -6,3 +6,5 @@
 
 ![]('img/screenshot-1575353207723.jpg')
 
+<image src="https://github.com/cnlisn/FixGridLayoutDemo/blob/master/img/screenshot-1575353207723.jpg" style="zoom:75%">
+
